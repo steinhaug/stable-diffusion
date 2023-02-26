@@ -1,6 +1,8 @@
 # stable-diffusion
 
-A collection of colabs that I maintain for playing with Stable Diffusion.
+A collection of colabs that I maintain for playing with Stable Diffusion. Other notebooks to mention: 
+<a href="https://colab.research.google.com/github/JoePenna/Dreambooth-Stable-Diffusion/blob/main/dreambooth_colab_joepenna.ipynb">Joe Penna's Dreambooth</a>
+
 
 ## Kista AUTOMATIC1111 WebUI <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_AUTOMATIC1111_WebUI.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
