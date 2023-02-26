@@ -14,6 +14,10 @@ for easy install and updateing of the notebook.
 * [huggingface](https://github.com/camenduru/stable-diffusion-webui-huggingface)
 * [civitai-browser](https://github.com/camenduru/sd-civitai-browser)
 
+## fast_stable_diffusion_AUTOMATIC1111+ <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/fast_stable_diffusion_AUTOMATIC1111%2B.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+
+The Last Ben notebook, enhanced for https://www.painthua.com/.
+
 ## steinhaug_trainer <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/steinhaug_trainer.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 Colab notebook for training your model using Dreambooth.
