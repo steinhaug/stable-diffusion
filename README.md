@@ -31,9 +31,12 @@ Colab notebook for training your model using Dreambooth.
 * Batch image generator
 * Huggingface uploader for your trained model
 
-## ControlNet_Video.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/ControlNet_Video.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+## Kista ControlNet_Video.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/ControlNet_Video.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 ControlNet demos for all models, and ControlNet-Video for video processing.
+
+ControlNet colab:<br>
+<a href="https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/controlnet.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 ## qkimxx.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/qkimxx.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
