@@ -62,6 +62,16 @@ Todo.
 
 Todo.
 
+## converter_colab.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/converter_colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+
+Convert your stable diffusion model to any format.
+
+## wav2lip-colab.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/wav2lip-colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+
+Resync any video with a wav file. 
+
+Source: <a href="https://colab.research.google.com/github/camenduru/wav2lip-colab/blob/main/wav2lip-colab.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> <a href="https://github.com/" target="_parent"><img src="https://img.shields.io/badge/-Open_in_GitHUB-000000?logo=github"></a>
+
 ## Credits
 
 All colabs above are derived work from theese repositories.
