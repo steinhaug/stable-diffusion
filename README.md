@@ -74,7 +74,7 @@ Convert your stable diffusion model to any format.
 
 Resync any video with a wav file. 
 
-Source: <a href="https://colab.research.google.com/github/camenduru/wav2lip-colab/blob/main/wav2lip-colab.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> <a href="https://github.com/" target="_parent"><img src="https://img.shields.io/badge/-Open_in_GitHUB-000000?logo=github"></a>
+Source: <a href="https://colab.research.google.com/github/camenduru/wav2lip-colab/blob/main/wav2lip-colab.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> <a href="https://github.com/camenduru/wav2lip-colab/" target="_parent"><img src="https://img.shields.io/badge/-GitHUB_repo-000000?logo=github"></a>
 
 ## Credits
 
