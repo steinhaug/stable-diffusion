@@ -1,8 +1,12 @@
 # stable-diffusion
 
-A collection of colabs that I maintain for playing with Stable Diffusion. Other notebooks to mention: 
-<a href="https://colab.research.google.com/github/JoePenna/Dreambooth-Stable-Diffusion/blob/main/dreambooth_colab_joepenna.ipynb">Joe Penna's Dreambooth</a>
+A collection of colabs that I maintain for myself while playing with Stable Diffusion and other AI models. Do register an Issue if you encounter problems with any of the notebooks here, everything is updating everywhere and all the time lately so things easily fall apart unless being maintained at a weekly basis.
 
+## You want to train your model with high quality
+
+Trust me, there are so much to learn and understand so unless you have the time for this I recommend trying Joe Penna's notebook and just accomodate whatever tips he has while running the notebook. Thinking hmmm I wonder what could improve the quality is a road that will take time with small rewards even no rewards :D 
+
+<a href="https://colab.research.google.com/github/JoePenna/Dreambooth-Stable-Diffusion/blob/main/dreambooth_colab_joepenna.ipynb"><img src="https://img.shields.io/badge/-Joe_pennas_Dreambooth-001660?logo=google" alt="Joe Penna's Dreambooth"></a>
 
 ## Kista AUTOMATIC1111 WebUI <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_AUTOMATIC1111_WebUI.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
