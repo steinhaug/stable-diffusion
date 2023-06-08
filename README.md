@@ -60,10 +60,6 @@ ControlNet colab:<br>
 
 Todo.
 
-## Stable_Diffusion_WebUi_Simplified.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Stable_Diffusion_WebUi_Simplified.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
-
-Todo.
-
 ## stable_diffusion_demonstration.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/stable_diffusion_demonstration.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 Todo.
