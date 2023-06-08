@@ -56,10 +56,6 @@ ControlNet demos for all models, and ControlNet-Video for video processing.
 ControlNet colab:<br>
 <a href="https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/controlnet.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
-## Dreambooth_Colab_edition_for_people_in_a_hurry.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Dreambooth_Colab_edition_for_people_in_a_hurry.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
-
-Super easy more or less 1 click dreambooth trainer.
-
 ## control_net_openpose_webui_colab.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/control_net_openpose_webui_colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 Todo.
