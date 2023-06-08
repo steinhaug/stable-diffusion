@@ -8,6 +8,16 @@ Trust me, there are so much to learn and understand so unless you have the time 
 
 <a href="https://colab.research.google.com/github/JoePenna/Dreambooth-Stable-Diffusion/blob/main/dreambooth_colab_joepenna.ipynb"><img src="https://img.shields.io/badge/-Joe_pennas_Dreambooth-001660?logo=google" alt="Joe Penna's Dreambooth"></a>
 
+## Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+
+Super easy demonstration of Stable Diffusion and Dreambooth. In under 60 minutes you will have trained your model and created 100+ AI images as I have automated the entire process, so unless the internet have broken again you should be ready for a treat. Here is what you need:
+
+- A Google Drive account, comes with any Google accounts. You can register one for free if you do not already have one.
+- A huggingface token, read token will do but write token if you want to save the trained model.
+- 6 images of the subject you want to train.
+
+Have fun!
+
 ## Kista AUTOMATIC1111 WebUI <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_AUTOMATIC1111_WebUI.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 Colab notebook for launching Stable Diffusion with the popular AUTOMATIC1111 WebUI, requires Google Drive and automatically saves your settings
@@ -43,10 +53,6 @@ ControlNet colab:<br>
 <a href="https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/controlnet.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 ## Dreambooth_Colab_edition_for_people_in_a_hurry.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Dreambooth_Colab_edition_for_people_in_a_hurry.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
-
-Super easy more or less 1 click dreambooth trainer.
-
-## Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 Super easy more or less 1 click dreambooth trainer.
 
