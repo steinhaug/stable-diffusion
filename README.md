@@ -10,11 +10,15 @@ Trust me, there are so much to learn and understand so unless you have the time 
 
 ## Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
-Super easy demonstration of Stable Diffusion and Dreambooth. In under 60 minutes you will have trained your model and created 100+ AI images as I have automated the entire process, so unless the internet have broken again you should be ready for a treat. Here is what you need:
+Super easy demonstration of Stable Diffusion and Dreambooth. In under 60 minutes you will have trained your model and created 100+ AI images as I have automated the entire process, so unless the internet have broken again you should be ready for a treat. So if you are OK with not having to understand what an LLM, a transformer, machine learning, diffusion models, python or any of the technical fancy pancy details... then lets go! 
+
+**prerequisites**
 
 - A Google Drive account, comes with any Google accounts. You can register one for free if you do not already have one.
 - A huggingface token, read token will do but write token if you want to save the trained model.
 - 6 images of the subject you want to train.
+
+Time from start to end: an hour of your time
 
 Have fun!
 
