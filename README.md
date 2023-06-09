@@ -8,7 +8,7 @@ Trust me, there are so much to learn and understand so unless you have the time 
 
 <a href="https://colab.research.google.com/github/JoePenna/Dreambooth-Stable-Diffusion/blob/main/dreambooth_colab_joepenna.ipynb"><img src="https://img.shields.io/badge/-Joe_pennas_Dreambooth-001660?logo=google" alt="Joe Penna's Dreambooth"></a>
 
-## Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+## Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/-COLAB_v1.1-000000?logo=github"></a>
 
 Super easy demonstration of Stable Diffusion and Dreambooth. In under 60 minutes you will have trained your model and created 100+ AI images as I have automated the entire process, so unless the internet have broken again you should be ready for a treat. So if you are OK with not having to understand what an LLM, a transformer, machine learning, diffusion models, python or any of the technical fancy pancy details... then lets go! 
 
@@ -21,6 +21,9 @@ Super easy demonstration of Stable Diffusion and Dreambooth. In under 60 minutes
 Time from start to end: an hour of your time
 
 Have fun!
+
+Version v1.1 - added model selection.
+Version v1.0 - Initial notebook
 
 ## Kista AUTOMATIC1111 WebUI <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_AUTOMATIC1111_WebUI.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
