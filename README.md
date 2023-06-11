@@ -67,11 +67,11 @@ Todo.
 
 Todo.
 
-## converter_colab.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/converter_colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+## converter_colab.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/tool/converter_colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 Convert your stable diffusion model to any format.
 
-## wav2lip-colab.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/wav2lip-colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+## wav2lip-colab.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/tool/wav2lip-colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 Resync any video with a wav file. 
 
