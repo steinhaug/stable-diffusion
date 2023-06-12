@@ -52,13 +52,13 @@ Colab notebook for training your model using Dreambooth.
 * Batch image generator
 * Huggingface uploader for your trained model
 
-## Kista ControlNet_Video.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/ControlNet_Video.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+## Kista ControlNet_Video.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/ControlNet_Video.ipynb" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/steinhaug-Open%20in%20Colab-blue?logo=google-colab"></a>
 
 ControlNet demos for all models, and ControlNet-Video for video processing.
 
 ControlNet colab:<br>
-<a href="https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/controlnet.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
-
+[![Open in Colab](https://img.shields.io/badge/diffusers-Open%20in%20Colab-blue?logo=google-colab)](https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/controlnet.ipynb)
+ 
 ## Infinite Zoom v1.1 [![Open in Colab](https://img.shields.io/badge/steinhaug-Open%20in%20Colab-blue?logo=google-colab)](https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/smooth_infinite_zoom.ipynb)
 
 Enhance or super zoom, in reality it's more like a full reverse. Needless to say, you can create some zoom effects with this colab.
@@ -79,13 +79,14 @@ Convert your stable diffusion model to any format.
 
 Resync any video with a wav file. 
 
-Source: <a href="https://colab.research.google.com/github/camenduru/wav2lip-colab/blob/main/wav2lip-colab.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> <a href="https://github.com/camenduru/wav2lip-colab/" target="_parent"><img src="https://img.shields.io/badge/-GitHUB_repo-000000?logo=github"></a>
+Source: <a href="https://colab.research.google.com/github/camenduru/wav2lip-colab/blob/main/wav2lip-colab.ipynb" target="_parent"><img src="https://img.shields.io/badge/camenduru-Open%20in%20Colab-blue?logo=google-colab" alt="Open In Colab"/></a> <a href="https://github.com/camenduru/wav2lip-colab/" target="_parent"><img src="https://img.shields.io/badge/camenduru-Open%20in%20Colab-blue?logo=github"></a>
 
 ## Credits
 
 All colabs above are derived work from theese repositories.
 
 * [ShivamShrirao](https://github.com/ShivamShrirao/)
+* [camenduru](https://github.com/camenduru/)
 * [TheLastBen](https://github.com/TheLastBen)
 
 ## About me
