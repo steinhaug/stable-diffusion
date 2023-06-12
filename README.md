@@ -59,6 +59,10 @@ ControlNet demos for all models, and ControlNet-Video for video processing.
 ControlNet colab:<br>
 <a href="https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/controlnet.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
+## Infinite Zoom v1.1 [![Open in Colab](https://img.shields.io/badge/steinhaug-Open%20in%20Colab-blue?logo=google-colab)](https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/smooth_infinite_zoom.ipynb)
+
+Enhance or super zoom, in reality it's more like a full reverse. Needless to say, you can create some zoom effects with this colab.
+
 ## control_net_openpose_webui_colab.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/control_net_openpose_webui_colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 Todo.
