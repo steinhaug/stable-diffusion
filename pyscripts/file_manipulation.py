@@ -48,9 +48,40 @@ def insertInfrontWhenMatched(file_path, replacements):
                 lines.insert(i - ins_i, insert_string)
                 break
 
-    with open('_' + file_path, 'w') as file:
+    with open(file_path, 'w') as file:
         file.writelines(lines)
+
+
+def commentOutLinesStartingWith(file_path, matches):
+
+    if not os.path.isfile( file_path ):
+        print(f'Error opening file: {file_path}')
+        sys.exit(1)
+
+    modified_lines = []
+
+    with open(file_path, 'r') as file:
+        #lines = file.readlines()
+        # Read the file and modify the lines
+        for line in file:
+            line = line.strip()
+            uncomment = False
+            for match in matches:
+                if line.startswith(match):
+                    print(f'Match: {match}')
+                    uncomment = True
+
+            if uncomment:
+                line = "# " + line
+
+            modified_lines.append(line)
+
+    # Save the modified lines back to the file
+    with open(file_path, 'w') as file:
+        file.write('\n'.join(modified_lines))
 
 
 #if __name__ == '__main__':
 #    main()
+
+# commentOutLinesStartingWith('scripts/req.txt', ['soundfile'])
