@@ -81,7 +81,28 @@ def commentOutLinesStartingWith(file_path, matches):
         file.write('\n'.join(modified_lines))
 
 
+def openReplaceStringMatch(file_path, match, replace):
+
+    if not os.path.isfile( file_path ):
+        print(f'Error opening file: {file_path}')
+        sys.exit(1)
+
+    modified_lines = []
+
+    with open(file_path, 'r') as file:
+
+        # Read the file and modify the lines
+        for line in file:
+            if match in line:
+                line = line.replace(match, replace)
+            modified_lines.append(line)
+
+    # Save the modified lines back to the file
+    with open(file_path, 'w') as file:
+        file.write(''.join(modified_lines))
+
 #if __name__ == '__main__':
 #    main()
 
 # commentOutLinesStartingWith('scripts/req.txt', ['soundfile'])
+# openReplaceStringMatch('scripts/req.txt', 'os.startfile(', 'os.system(')
