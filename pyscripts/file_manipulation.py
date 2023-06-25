@@ -78,7 +78,7 @@ def commentOutLinesStartingWith(file_path, matches, commentTag = '# '):
 
     # Save the modified lines back to the file
     with open(file_path, 'w') as file:
-        file.write('\n'.join(modified_lines))
+        file.write(''.join(modified_lines))
 
 
 def openReplaceStringMatch(file_path, match, replace):
