@@ -23,9 +23,9 @@ Time from start to end: an hour of your time
 Have fun!
 
 Version v1.3 - Like a glove update. Added checks for crashed notebooks, notifying user of replaying cell containing all needed values. Added more error detection for situations things dont work out as planned... in colab world more often than not...  
-Version v1.2 - AutoAI maintained for gender, checkpoint file created earlier and model card for upload is detailed now.
-Version v1.1 - Added model selection.
-Version v1.0 - Initial notebook
+Version v1.2 - AutoAI maintained for gender, checkpoint file created earlier and model card for upload is detailed now.  
+Version v1.1 - Added model selection.  
+Version v1.0 - Initial notebook  
 
 ## Kista AUTOMATIC1111 WebUI <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_AUTOMATIC1111_WebUI.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
