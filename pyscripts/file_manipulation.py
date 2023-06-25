@@ -64,10 +64,10 @@ def commentOutLinesStartingWith(file_path, matches, commentTag = '# '):
         #lines = file.readlines()
         # Read the file and modify the lines
         for line in file:
-            line = line.strip()
+            # line = line.strip()
             uncomment = False
             for match in matches:
-                if line.startswith(match):
+                if line.strip().startswith(match):
                     print(f'Match: {match}')
                     uncomment = True
 
