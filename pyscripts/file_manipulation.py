@@ -52,7 +52,7 @@ def insertInfrontWhenMatched(file_path, replacements):
         file.writelines(lines)
 
 
-def commentOutLinesStartingWith(file_path, matches):
+def commentOutLinesStartingWith(file_path, matches, commentTag = '# '):
 
     if not os.path.isfile( file_path ):
         print(f'Error opening file: {file_path}')
@@ -72,7 +72,7 @@ def commentOutLinesStartingWith(file_path, matches):
                     uncomment = True
 
             if uncomment:
-                line = "# " + line
+                line = commentTag + line
 
             modified_lines.append(line)
 
