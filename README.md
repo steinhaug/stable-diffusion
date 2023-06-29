@@ -27,7 +27,16 @@ Version v1.2 - _AutoAI maintained for gender, checkpoint file created earlier an
 Version v1.1 - _Added model selection._  
 Version v1.0 - _Initial notebook_  
 
+## Kista WebUI Colab <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_WebUI_Colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+
+Colab notebook for launching Stable Diffusion with the popular AUTOMATIC1111 WebUI, requires Google Drive and automatically saves your settings for easy install and updating of the notebook.
+
+**Extensions:**
+More or less all extensions are available, ControlNet and other intensive extensions are already enabled and made sure are working.
+
 ## Kista AUTOMATIC1111 WebUI <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_AUTOMATIC1111_WebUI.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+
+USE: Kista WebUI Colab  
 
 Colab notebook for launching Stable Diffusion with the popular AUTOMATIC1111 WebUI, requires Google Drive and automatically saves your settings
 for easy install and updateing of the notebook.
