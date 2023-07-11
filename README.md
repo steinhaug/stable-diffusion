@@ -29,7 +29,7 @@ Version v1.0: _Initial notebook_
 
 ## Kista WebUI Colab v1.3 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_WebUI_Colab.ipynb?v1.3" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
-Colab notebook based on a [![Open in Colab](https://img.shields.io/badge/Camenduru-➡️-blue?logo=github)](https://github.com/camenduru) notebook, extended with editable settings and
+Colab notebook based on a [![Open in Colab](https://img.shields.io/badge/Camenduru-❕-blue?logo=github)](https://github.com/camenduru) notebook, extended with editable settings and
 auto cache modes for saving large files and loading then from your Drive.
 
 **extension pipeline:**  
