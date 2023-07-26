@@ -27,7 +27,7 @@ Version v1.2: _AutoAI maintained for gender, checkpoint file created earlier and
 Version v1.1: _Added model selection._  
 Version v1.0: _Initial notebook_  
 
-## Kista WebUI Colab v1.3 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_WebUI_Colab.ipynb?v1.3" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+## Kista WebUI Colab v1.5 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_WebUI_Colab.ipynb?v1.5" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
 Colab notebook based on a [![Open in Colab](https://img.shields.io/badge/Camenduru-❕-blue?logo=github)](https://github.com/camenduru) notebook, extended with editable settings and
 auto cache modes for saving large files and loading then from your Drive.
@@ -36,6 +36,7 @@ auto cache modes for saving large files and loading then from your Drive.
 Cozy-Nest, ControlNet, roop, adetailer, infinite-image-browsing, clip-interrogator and loads more.
 
 **version history:**  
+v1.4: Corrected installer errors that suddenly appeared in colab.    
 v1.3: _Additional-networks hashes cache added, added Lora search paths._  
 v1.2: _Fixing variables_  
 v1.1: _Adding default configuration with tasks that sets a new user up at first try_  
