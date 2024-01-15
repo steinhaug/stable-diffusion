@@ -100,6 +100,11 @@ Resync any video with a wav file.
 
 Source: <a href="https://colab.research.google.com/github/camenduru/wav2lip-colab/blob/main/wav2lip-colab.ipynb" target="_parent"><img src="https://img.shields.io/badge/camenduru-Open%20in%20Colab-blue?logo=google-colab" alt="Open In Colab"/></a> <a href="https://github.com/camenduru/wav2lip-colab/" target="_parent"><img src="https://img.shields.io/badge/camenduru-Open%20in%20Colab-blue?logo=github"></a>
 
+
+## faceswap video <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/faceswap/Video_Face_Swapper__For_people_in_a_hurry.ipynb?1" target="_blank"><img alt="Open Notebook in Colab" src="https://img.shields.io/badge/Video%20Face%20Swapper%20--%20for%20people%20in%20a%20hurry-Notebook-blue?logo=googlecolab"></a>
+
+Takes a videofile and 1 image, using ROOP library and swaps the entiry video.
+
 ## Credits
 
 All colabs above are derived work from theese repositories.
