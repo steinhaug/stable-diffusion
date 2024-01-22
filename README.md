@@ -8,7 +8,7 @@ Trust me, there are so much to learn and understand so unless you have the time 
 
 <a href="https://colab.research.google.com/github/JoePenna/Dreambooth-Stable-Diffusion/blob/main/dreambooth_colab_joepenna.ipynb"><img src="https://img.shields.io/badge/-Joe_pennas_Dreambooth-001660?logo=google" alt="Joe Penna's Dreambooth"></a>
 
-## Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/-COLAB_v1.3-000000?logo=github"></a>
+## Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/Dreambooth_Colab_edition_for_people_in_a_hurry_fp16.ipynb" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/-COLAB_v1.5-000000?logo=github"></a>
 
 Super easy demonstration of Stable Diffusion and Dreambooth. In under 60 minutes you will have trained your model and created 100+ AI images as I have automated the entire process, so unless the internet have broken again you should be ready for a treat. So if you are OK with not having to understand what an LLM, a transformer, machine learning, diffusion models, python or any of the technical fancy pancy details... then lets go! 
 
@@ -16,12 +16,14 @@ Super easy demonstration of Stable Diffusion and Dreambooth. In under 60 minutes
 
 - A Google Drive account, comes with any Google accounts. You can register one for free if you do not already have one.
 - A huggingface token, read token will do but write token if you want to save the trained model.
-- 6 images of the subject you want to train.
+- 6 or 8 images of the subject you want to train.
 
 Time from start to end: an hour of your time
 
 Have fun!
 
+Version v1.5: _Installation of libraries verified with Colab Pro._  
+Version v1.4: _Installation of libraries verified with Colab Pro, does not work anymore with free Colab._  
 Version v1.3: _Like a glove update. Added checks for crashed notebooks, notifying user of replaying cell containing all needed values. Added more error detection for situations things dont work out as planned... in colab world more often than not..._  
 Version v1.2: _AutoAI maintained for gender, checkpoint file created earlier and model card for upload is detailed now._  
 Version v1.1: _Added model selection._  
