@@ -31,8 +31,7 @@ Version v1.0: _Initial notebook_
 
 ## Kista WebUI Colab v1.6 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_WebUI_Colab.ipynb?v1.6" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
-Colab notebook based on a [![Open in Colab](https://img.shields.io/badge/Camenduru-Profile-blue?logo=github)](https://github.com/camenduru) notebook, extended with editable settings and
-auto cache modes for saving large files and loading from your gDrive.
+Colab notebook for launching Stable Diffusion with Cozy-Nest theme and ControlNet, requires Google Drive and automatically saves your settings for easy install and updating of the notebook.
 
 **extension pipeline:**  
 Cozy-Nest, ControlNet, roop, adetailer, infinite-image-browsing, clip-interrogator and loads more.
@@ -46,6 +45,13 @@ v1.2: _Fixing variables_
 v1.1: _Adding default configuration with tasks that sets a new user up at first try_  
 v1.0: _Initial release_  
 
+## Kista AUTOMATIC1111 WebUI <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_Automatic1111_Colab.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
+
+Colab notebook for launching Stable Diffusion with the popular AUTOMATIC1111 WebUI and ControlNet, requires Google Drive and automatically saves your settings
+for easy install and updateing of the notebook.
+
+**version history:**  
+v1.0: _Initial release_  
 
 ## Kista SDXL WebUI Colab v1.0 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_SDXL_WebUI_Colab.ipynb?v1.0" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
@@ -54,20 +60,6 @@ auto cache modes for saving large files and loading from your gDrive.
 
 **version history:**  
 v1.0: _Initial release_  
-
-## Kista AUTOMATIC1111 WebUI <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_AUTOMATIC1111_WebUI.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
-
-USE: Kista WebUI Colab  
-
-Colab notebook for launching Stable Diffusion with the popular AUTOMATIC1111 WebUI, requires Google Drive and automatically saves your settings
-for easy install and updateing of the notebook.
-
-**Extensions:**
-* [openpose-editor](https://github.com/fkunn1326/openpose-editor)
-* [controlnet](https://github.com/Mikubill/sd-webui-controlnet)
-* [images-browser](https://github.com/yfszzx/stable-diffusion-webui-images-browser)
-* [huggingface](https://github.com/camenduru/stable-diffusion-webui-huggingface)
-* [civitai-browser](https://github.com/camenduru/sd-civitai-browser)
 
 ## fast_stable_diffusion_AUTOMATIC1111+ <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/fast_stable_diffusion_AUTOMATIC1111%2B.ipynb" target="_blank"><img alt="Open in Colab" src="https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/badges/colab-badge.svg"></a>
 
