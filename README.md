@@ -56,9 +56,10 @@ Colab notebook for launching Stable Diffusion with Cozy-Nest theme and ControlNe
 Cozy-Nest, ControlNet, roop, adetailer, infinite-image-browsing, clip-interrogator and loads more.
 
 **version history:**  
-v1.6: Updated and corrected installer, disabled remove background plugin that crashed launch.  
-v1.5: Updated and corrected installer.  
-v1.4: Corrected installer errors that suddenly appeared in colab.  
+v1.8: _adetailer didnt work on first load._  
+v1.6: _Updated and corrected installer, disabled remove background plugin that crashed launch._  
+v1.5: _Updated and corrected installer._  
+v1.4: _Corrected installer errors that suddenly appeared in colab._  
 v1.3: _Additional-networks hashes cache added, added Lora search paths._  
 v1.2: _Fixing variables_  
 v1.1: _Adding default configuration with tasks that sets a new user up at first try_  
@@ -72,6 +73,7 @@ Colab notebook for launching Stable Diffusion with the popular AUTOMATIC1111 Web
 for easy install and updateing of the notebook.
 
 **version history:**  
+v1.1: _adetailer didnt work on first load._  
 v1.0: _Initial release_  
 
 ### Kista SDXL WebUI Colab v1.0 
