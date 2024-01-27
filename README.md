@@ -44,19 +44,19 @@ Trust me, there are so much to learn and understand so unless you have the time 
 
 ## 2.0 Stable Diffusion - WebUI + ControlNet
 
-I have made a few Pro Notebooks (You need Colab Pro) for you to have fun with Stable Diffusion and the many great extensions you most likely can't be without. I also made a cache system using the Google Drive so that loading times are much faster from time to time, and you can save your settings :)
+I have made a few Colab Pro Notebooks (You need Colab Pro to run Stable Diffusion, you need the ekstra memory) for you to have fun with Stable Diffusion and the many great extensions you most likely can't be without. I also made a cache system using the Google Drive so that loading times are much faster from time to time, and you can save your settings :)
 
 ### 2.1 Kista WebUI Colab v1.8 
 
 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_WebUI_Colab.ipynb?v1.8" target="_blank"><img alt="Open #in Colab" src="https://img.shields.io/badge/Kista%20--%20WebUI-PRO%20Notebook-blue?logo=googlecolab"></a>
 
-Colab notebook for launching Stable Diffusion with Cozy-Nest theme and ControlNet, requires Google Drive and automatically saves your settings for easy install and updating of the notebook.
+Colab Pro Notebook for launching Stable Diffusion with Cozy-Nest theme and ControlNet, requires Google Drive and automatically saves your settings for easy install and updating of the notebook.
 
 **extension pipeline:**  
 Cozy-Nest, ControlNet, roop, adetailer, infinite-image-browsing, clip-interrogator and loads more.
 
 **version history:**  
-v1.8: _adetailer didnt work on first load._  
+v1.8: _adetailer didnt work on first load, required reload. ControlNet missed insightface libraries._  
 v1.6: _Updated and corrected installer, disabled remove background plugin that crashed launch._  
 v1.5: _Updated and corrected installer._  
 v1.4: _Corrected installer errors that suddenly appeared in colab._  
@@ -69,21 +69,21 @@ v1.0: _Initial release_
 
 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_Automatic1111_Colab.ipynb?v1.1" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/Kista%20--%20Automatic1111%20WebUI-PRO%20Notebook-blue?logo=googlecolab"></a>
 
-Colab notebook for launching Stable Diffusion with the popular AUTOMATIC1111 WebUI and ControlNet, requires Google Drive and automatically saves your settings
+Colab Pro Notebook for launching Stable Diffusion with the popular AUTOMATIC1111 WebUI and ControlNet, requires Google Drive and automatically saves your settings
 for easy install and updateing of the notebook.
 
 **extension pipeline:**  
 ControlNet, roop, adetailer, clip-interrogator and loads more.
 
 **version history:**  
-v1.1: _adetailer didnt work on first load._  
+v1.1: _adetailer didnt work on first load, required reload. ControlNet missed insightface libraries._  
 v1.0: _Initial release_  
 
 ### 2.3 Kista SDXL WebUI Colab v1.0 
 
 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_SDXL_WebUI_Colab.ipynb?v1.0" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/Kista%20--%20SDXL%20WebUI-PRO%20Notebook-blue?logo=googlecolab"></a>
 
-Colab notebook for launching Stable Diffusion XL with gradio and ControlNet, requires Google Drive and automatically saves your settings for easy install and updating of the notebook.
+Colab Pro Notebook for launching Stable Diffusion XL with gradio and ControlNet, requires Google Drive and automatically saves your settings for easy install and updating of the notebook.
 
 **version history:**  
 v1.0: _Initial release_  
