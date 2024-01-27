@@ -2,9 +2,9 @@
 
 A collection of colabs that I maintain for myself while playing with Stable Diffusion and other AI models. Do register an Issue if you encounter problems with any of the notebooks here, everything is updating everywhere and all the time lately so things easily fall apart unless being maintained at a weekly basis.
 
-## Stable Diffusion - Training a model
+## 1.0 Stable Diffusion - Training a model
 
-### You want a quick-fix and get some of those nice AI images?
+### 1.1 You want a quick-fix and get some of those nice AI images?
 
 I have made a Colab Notebook for you, should take you minimal efforts and you will also get a bunch of AI images with a simple click - for free.
 
@@ -31,7 +31,7 @@ Version v1.2: _AutoAI maintained for gender, checkpoint file created earlier and
 Version v1.1: _Added model selection._  
 Version v1.0: _Initial notebook_  
 
-### You want to train your model with high quality
+### 1.2 You want to train your model with high quality
 
 Trust me, there are so much to learn and understand so unless you have the time for this I recommend trying Joe Penna's notebook and just accomodate whatever tips he has while running the notebook. Thinking hmmm I wonder what could improve the quality is a road that will take time with small rewards even no rewards :D 
 
@@ -42,11 +42,11 @@ Trust me, there are so much to learn and understand so unless you have the time 
 
 
 
-## Stable Diffusion - WebUI
+## 2.0 Stable Diffusion - WebUI + ControlNet
 
 I have made a few Pro Notebooks (You need Colab Pro) for you to have fun with Stable Diffusion and the many great extensions you most likely can't be without. I also made a cache system using the Google Drive so that loading times are much faster from time to time, and you can save your settings :)
 
-### Kista WebUI Colab v1.8 
+### 2.1 Kista WebUI Colab v1.8 
 
 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_WebUI_Colab.ipynb?v1.8" target="_blank"><img alt="Open #in Colab" src="https://img.shields.io/badge/Kista%20--%20WebUI-PRO%20Notebook-blue?logo=googlecolab"></a>
 
@@ -65,18 +65,21 @@ v1.2: _Fixing variables_
 v1.1: _Adding default configuration with tasks that sets a new user up at first try_  
 v1.0: _Initial release_  
 
-### Kista AUTOMATIC1111 WebUI v1.1
+### 2.2 Kista AUTOMATIC1111 WebUI v1.1
 
 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_Automatic1111_Colab.ipynb?v1.1" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/Kista%20--%20Automatic1111%20WebUI-PRO%20Notebook-blue?logo=googlecolab"></a>
 
 Colab notebook for launching Stable Diffusion with the popular AUTOMATIC1111 WebUI and ControlNet, requires Google Drive and automatically saves your settings
 for easy install and updateing of the notebook.
 
+**extension pipeline:**  
+ControlNet, roop, adetailer, clip-interrogator and loads more.
+
 **version history:**  
 v1.1: _adetailer didnt work on first load._  
 v1.0: _Initial release_  
 
-### Kista SDXL WebUI Colab v1.0 
+### 2.3 Kista SDXL WebUI Colab v1.0 
 
 <a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_SDXL_WebUI_Colab.ipynb?v1.0" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/Kista%20--%20SDXL%20WebUI-PRO%20Notebook-blue?logo=googlecolab"></a>
 
@@ -87,7 +90,7 @@ v1.0: _Initial release_
 
 
 
-## Misc
+## 3.0 Misc
 
 ### fast_stable_diffusion_AUTOMATIC1111+
 
