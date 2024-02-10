@@ -1,0 +1,77 @@
+#@title SOURCE - Connect to runtime and output connection settings for RAM and GPU
+#@markdown Using: https://python-minifier.com/
+# This Notebook is maintained by Steinhaug at Gmail dot Com, https://github.com/steinhaug/
+
+#@markdown **POPULAR NOTEBOOKS AND PROJECTS BY KIM STEINHAUG:**
+#@markdown
+#@markdown
+#@markdown
+#@markdown
+#@markdown
+#@markdown
+#@markdown All Notebooks are maintained by Kim Steinhaug, use my Github for reporting problems or ideas.
+
+import os; import zipfile; from PIL import Image, ImageDraw, ImageFont; from IPython.display import display, Markdown, clear_output
+_kista_tmp_folder, _kista_zip_ttf, _kista_zip_ico  = ['/content/_kista_tmp', '/content/ttf.zip', '/content/icons.zip']
+
+import requests
+import shutil
+def download_file(url, path_new_name):
+    # Send a GET request to the URL
+    response = requests.get(url, stream=True)
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Open the file at the specified path with the new name in binary write mode
+        with open(f"{path_new_name}", "wb") as file:
+            # Iterate over the response content in chunks and write it to the file
+            for chunk in response.iter_content(chunk_size=128):
+                file.write(chunk)
+        print("Download completed.")
+    else:
+        print(f"Download failed with status code: {response.status_code}")
+
+if not os.path.exists(_kista_tmp_folder):
+    if not os.path.exists(_kista_zip_ttf):
+        download_file("https://github.com/steinhaug/stable-diffusion/raw/main/assets/ttf/ttf-5-fonts.zip", _kista_zip_ttf)
+    if not os.path.exists(_kista_zip_ico):
+        download_file("https://github.com/steinhaug/stable-diffusion/raw/main/assets/icons/icons-v01.zip", _kista_zip_ico)
+    clear_output()
+
+if os.path.exists(_kista_zip_ttf) and os.path.exists(_kista_zip_ico):
+    if not os.path.exists(_kista_tmp_folder):
+        os.makedirs(_kista_tmp_folder)
+        with zipfile.ZipFile(_kista_zip_ttf, 'r') as zip_ref:
+            zip_ref.extractall(_kista_tmp_folder)
+        with zipfile.ZipFile(_kista_zip_ico, 'r') as zip_ref:
+            zip_ref.extractall(_kista_tmp_folder)
+    if os.path.exists(_kista_zip_ttf):
+        os.remove(_kista_zip_ttf)
+    if os.path.exists(_kista_zip_ico):
+        os.remove(_kista_zip_ico)
+def printLog(text, outputmode='display', saveImage=f'{_kista_tmp_folder}/_tmpImage.png'):
+    image = Image.new("RGBA", (400, 25), (255, 255, 255, 0))
+    icon_path = _kista_tmp_folder + "/icons/ico/tablet.png"
+    icon = Image.open(icon_path).convert("RGBA")
+    icon = icon.resize((24, 24))
+    image.paste(icon, (0, (image.height - icon.height) // 2))
+    draw = ImageDraw.Draw(image)
+    font = ImageFont.truetype(_kista_tmp_folder + "/ttf/SofiaSansExtraCondensed/SofiaSansExtraCondensed-VariableFont_wght.ttf", 20)
+    parsing_commands = { "default": ["[d]", "black"], "muted": ["[m]", "grey"], "alert": ["[!a]", "red"], "info": ["[!i]", "blue"], "success": ["[!s]", "green"], "warning": ["[!w]", "red"] }
+    words = text.split()
+    x = 30
+    color = "black"
+    for word in words:
+        for command, (prefix, command_color) in parsing_commands.items():
+            if word.startswith(prefix):
+                color = command_color
+                word = word[len(prefix):]
+                break
+        draw.text((x, (image.height - font.size) // 2 - 2), word, font=font, fill=color)
+        x += draw.textsize(word, font=font)[0] + 5
+    if outputmode == 'display':
+        display( image )
+    else:
+        image.save(saveImage)
+
+
+printLog("Holy Moly Macarony")
