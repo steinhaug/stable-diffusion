@@ -36,7 +36,8 @@ Version v1.0: _Initial notebook_
 
 Trust me, there are so much to learn and understand so unless you have the time for this I recommend trying Joe Penna's notebook and just accomodate whatever tips he has while running the notebook. Thinking hmmm I wonder what could improve the quality is a road that will take time with small rewards even no rewards :D 
 
-[https://github.com/JoePenna/Dreambooth-Stable-Diffusion/](https://github.com/JoePenna/Dreambooth-Stable-Diffusion/) <a href="https://colab.research.google.com/github/JoePenna/Dreambooth-Stable-Diffusion/blob/main/dreambooth_google_colab_joepenna.ipynb" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/Dreambooth%20--%20Joe%20Penna's-PRO%20Notebook-blue?logo=googlecolab"></a>  
+[https://github.com/JoePenna/Dreambooth-Stable-Diffusion/](https://github.com/JoePenna/Dreambooth-Stable-Diffusion/)  
+<a href="https://colab.research.google.com/github/JoePenna/Dreambooth-Stable-Diffusion/blob/main/dreambooth_google_colab_joepenna.ipynb" target="_blank"><img alt="Open in Colab" src="https://img.shields.io/badge/Dreambooth%20--%20Joe%20Penna's-PRO%20Notebook-blue?logo=googlecolab"></a>  
 
 ## 2.0 Stable Diffusion - WebUI + ControlNet
 
