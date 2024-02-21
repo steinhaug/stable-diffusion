@@ -24,6 +24,7 @@ Time from start to end: an hour of your time
 
 Have fun!
 
+Version v1.6: _Saving prompt data to PNG exif data_  
 Version v1.5: _Installation of libraries verified with Colab Pro._  
 Version v1.4: _Installation of libraries verified with Colab Pro, does not work anymore with free Colab._  
 Version v1.3: _Like a glove update. Added checks for crashed notebooks, notifying user of replaying cell containing all needed values. Added more error detection for situations things dont work out as planned... in colab world more often than not..._  
