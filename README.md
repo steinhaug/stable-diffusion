@@ -43,9 +43,9 @@ Trust me, there are so much to learn and understand so unless you have the time 
 
 I have made a few Colab Pro Notebooks (You need Colab Pro to run Stable Diffusion, you need the ekstra memory) for you to have fun with Stable Diffusion and the many great extensions you most likely can't be without. I also made a cache system using the Google Drive so that loading times are much faster from time to time, and you can save your settings :)
 
-### 2.1 Kista WebUI Colab v1.8 
+### 2.1 Kista WebUI Colab v1.9 
 
-<a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_WebUI_Colab.ipynb?v1.8" target="_blank"><img alt="Open #in Colab" src="https://img.shields.io/badge/Kista%20--%20WebUI-PRO%20Notebook-blue?logo=googlecolab"></a>
+<a href="https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/KISTA_WebUI_Colab.ipynb?v1.9" target="_blank"><img alt="Open #in Colab" src="https://img.shields.io/badge/Kista%20--%20WebUI-PRO%20Notebook-blue?logo=googlecolab"></a>
 
 Colab Pro Notebook for launching Stable Diffusion with Cozy-Nest theme and ControlNet, requires Google Drive and automatically saves your settings for easy install and updating of the notebook.
 
@@ -53,6 +53,7 @@ Colab Pro Notebook for launching Stable Diffusion with Cozy-Nest theme and Contr
 Cozy-Nest, ControlNet, roop, adetailer, infinite-image-browsing, clip-interrogator and loads more.
 
 **version history:**  
+v1.9: _Adding cells for setting up gDrive with models and controlnet when you have no models_  
 v1.8: _adetailer didnt work on first load, required reload. ControlNet missed insightface libraries._  
 v1.6: _Updated and corrected installer, disabled remove background plugin that crashed launch._  
 v1.5: _Updated and corrected installer._  
