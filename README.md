@@ -24,6 +24,7 @@ Time from start to end: an hour of your time
 
 Have fun!
 
+Version v1.7: _Updating installer to work with latest colab configuration_  
 Version v1.6: _Saving prompt data to PNG exif data_  
 Version v1.5: _Installation of libraries verified with Colab Pro._  
 Version v1.4: _Installation of libraries verified with Colab Pro, does not work anymore with free Colab._  
