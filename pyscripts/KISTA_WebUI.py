@@ -205,18 +205,14 @@ def dir_is_ok(directory):
 def download_all_control_models():
     if hf_read_token is not None and hf_read_token != '':
         HF_TOKEN = {hf_read_token}
-    else:
-        from google.colab import userdata
-        HF_TOKEN = userdata.get('HF_TOKEN')
     mkdir /content/huggface_cache
     huggingface-cli login --token {HF_TOKEN}
     from huggingface_hub import snapshot_download
     # bloated repository ckpt/ControlNet-v1-1
     path = snapshot_download(repo_id="lllyasviel/ControlNet-v1-1", repo_type="model", revision="main", local_dir=f"{WEBUI_PATH}/extensions/sd-webui-controlnet/models", local_dir_use_symlinks=False)
     path = snapshot_download(repo_id="TencentARC/T2I-Adapter", repo_type="model", revision="main", local_dir=f"{WEBUI_PATH}/extensions/sd-webui-controlnet", local_dir_use_symlinks=False, allow_patterns="models/*")
-
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/spaces/LiheYoung/Depth-Anything/resolve/main/checkpoints_controlnet/diffusion_pytorch_model.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_sd15_depth_anything.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/CiaraRowles/TemporalNet/blob/main/diff_control_sd15_temporalnet_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_sd15_temporalnet_fp16.safetensors
+    wget --content-disposition https://huggingface.co/spaces/LiheYoung/Depth-Anything/resolve/main/checkpoints_controlnet/diffusion_pytorch_model.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/CiaraRowles/TemporalNet/blob/main/diff_control_sd15_temporalnet_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
     clear_output()
     print(f'All ControlNet models downloaded...')
     return 1
@@ -513,51 +509,47 @@ json_adetailer = '''
 '''
 
 def download_all_control_models_new():
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11e_sd15_ip2p_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11e_sd15_ip2p_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11e_sd15_shuffle_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11e_sd15_shuffle_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_canny_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11f1p_sd15_depth_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_inpaint_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_lineart_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_mlsd_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_mlsd_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_normalbae_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_normalbae_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_openpose_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_scribble_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_scribble_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_seg_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_softedge_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15s2_lineart_anime_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15s2_lineart_anime_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile_fp16.safetensors -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11f1e_sd15_tile_fp16.safetensors
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11e_sd15_ip2p_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11e_sd15_ip2p_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11e_sd15_shuffle_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11e_sd15_shuffle_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_canny_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_canny_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11f1p_sd15_depth_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11f1p_sd15_depth_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_inpaint_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_inpaint_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_lineart_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_lineart_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_mlsd_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_mlsd_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_normalbae_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_normalbae_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_openpose_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_openpose_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_scribble_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_scribble_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_seg_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_seg_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_softedge_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15_softedge_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15s2_lineart_anime_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11p_sd15s2_lineart_anime_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11f1e_sd15_tile_fp16.yaml -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o control_v11f1e_sd15_tile_fp16.yaml
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_style_sd14v1.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_style_sd14v1.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_sketch_sd14v1.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_sketch_sd14v1.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_seg_sd14v1.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_seg_sd14v1.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_openpose_sd14v1.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_openpose_sd14v1.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_keypose_sd14v1.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_keypose_sd14v1.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_depth_sd14v1.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_depth_sd14v1.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_color_sd14v1.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_color_sd14v1.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_canny_sd14v1.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_canny_sd14v1.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_canny_sd15v2.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_canny_sd15v2.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_depth_sd15v2.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_depth_sd15v2.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_sketch_sd15v2.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_sketch_sd15v2.pth
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_zoedepth_sd15v1.pth -d {WEBUI_PATH}/extensions/sd-webui-controlnet/models -o t2iadapter_zoedepth_sd15v1.pth
-def copy_files__directory_new(fc_source, fc_destination):
-    python fastcopy.py "$fc_source/". "$fc_destination" --thread 20 --size-limit 400mb
-    python fastcopy.py "$fc_source/". "$fc_destination" --thread 3 --size-limit 800mb
-    python fastcopy.py "$fc_source/". "$fc_destination" --thread 3 --size-limit 3500mb
-    rsync -r -v --size-only --progress $fc_source/. $fc_destination --delete
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11e_sd15_ip2p_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11e_sd15_shuffle_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_mlsd_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_normalbae_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_scribble_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15s2_lineart_anime_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile_fp16.safetensors -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11e_sd15_ip2p_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11e_sd15_shuffle_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_canny_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11f1p_sd15_depth_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_inpaint_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_lineart_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_mlsd_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_normalbae_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_openpose_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_scribble_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_seg_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_softedge_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15s2_lineart_anime_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11f1e_sd15_tile_fp16.yaml -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_style_sd14v1.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_sketch_sd14v1.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_seg_sd14v1.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_openpose_sd14v1.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_keypose_sd14v1.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_depth_sd14v1.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_color_sd14v1.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_canny_sd14v1.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_canny_sd15v2.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_depth_sd15v2.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_sketch_sd15v2.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+    wget --content-disposition https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_zoedepth_sd15v1.pth -P {WEBUI_PATH}/extensions/sd-webui-controlnet/models
+
 def move_files_recursively(source_folder, destination_folder):
     if not os.path.exists(source_folder):
         raise FileNotFoundError(f"The source folder {source_folder} does not exist.")
@@ -619,7 +611,7 @@ if not skip_install:
 
     git {CLONE_ARG} https://huggingface.co/embed/negative {WEBUI_PATH}/embeddings/negative
     git {CLONE_ARG} https://huggingface.co/embed/lora {WEBUI_PATH}/models/Lora/positive
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/embed/upscale/resolve/main/4x-UltraSharp.pth -d {WEBUI_PATH}/models/ESRGAN -o 4x-UltraSharp.pth
+    wget --content-disposition https://huggingface.co/embed/upscale/resolve/main/4x-UltraSharp.pth -d {WEBUI_PATH}/models/ESRGAN -o 4x-UltraSharp.pth
     wget https://raw.githubusercontent.com/camenduru/stable-diffusion-webui-scripts/main/run_n_times.py -O {WEBUI_PATH}/scripts/run_n_times.py
 
     rm -Rf {WEBUI_PATH}/embeddings/.git
@@ -724,7 +716,7 @@ if not skip_install:
                 os.makedirs(DEFAULT_CONTROLNET_FOLDER, exist_ok=True)
                 dir__controlnet = DEFAULT_CONTROLNET_FOLDER
             print('Copying all models into gDrive cache folder...')
-            copy_files__directory_new(f'{WEBUI_PATH}/extensions/sd-webui-controlnet/models', dir__controlnet)
+            copy_files__directory(f'{WEBUI_PATH}/extensions/sd-webui-controlnet/models', dir__controlnet)
             task__cache_controlnet = False
             update_KISTA_config()
             clear_output()
@@ -762,7 +754,7 @@ if not skip_install:
 #
 if do_we_need_to_download_checkpoint():
     print('Downloading uberRealisticPornMerge_urpmv13')
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/urpm/resolve/main/uberRealisticPornMerge_urpmv13.safetensors -d {WEBUI_PATH}/models/Stable-diffusion -o uberRealisticPornMerge_urpmv13.safetensors
+    wget --content-disposition https://huggingface.co/ckpt/urpm/resolve/main/uberRealisticPornMerge_urpmv13.safetensors -d {WEBUI_PATH}/models/Stable-diffusion -o uberRealisticPornMerge_urpmv13.safetensors
     if task__cache_checkpoints:
         if not return__isValidDir(dir__models):
             dir__models = DEFAULT_CHECKPOINTS_FOLDER
