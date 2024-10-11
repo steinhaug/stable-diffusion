@@ -1,0 +1,275 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "mount_file_id": "1qPy9PMmDk0thRXs2F8eVVb-NJfE3iyij",
+      "authorship_tag": "ABX9TyMgdQpN7GnP54PXbQfZGhf2",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/steinhaug/stable-diffusion/blob/main/tool/HF-Repo-Uploader\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## --- Huggingface setup"
+      ],
+      "metadata": {
+        "id": "95Cs0QXTvksh"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "id": "xW7YGfUbIUsh"
+      },
+      "outputs": [],
+      "source": [
+        "#@markdown $\\color{grey}{\\text{ --- If HUGGINGFACE_TOKEN is empty will load HF_TOKEN from secrets ---}}$\n",
+        "HUGGINGFACE_TOKEN = \"\" #@param {type:\"string\"}\n",
+        "\n",
+        "#@markdown $\\color{grey}{\\text{ --- Model repo name ---}}$\n",
+        "YOUR_TOKEN = \"cache-repository\" #@param {type:\"string\"}\n",
+        "\n",
+        "if HUGGINGFACE_TOKEN == \"\":\n",
+        "    from google.colab import userdata\n",
+        "    HUGGINGFACE_TOKEN = userdata.get('HF_TOKEN')\n",
+        "\n",
+        "!mkdir -p ~/.cache\n",
+        "!mkdir -p ~/.cache/huggingface\n",
+        "!echo -n \"{HUGGINGFACE_TOKEN}\" > ~/.cache/huggingface/token\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#@markdown Notebook functions and library imports\n",
+        "from pathlib import Path\n",
+        "inip = Path(\"/content/drive/MyDrive\")\n",
+        "if not inip.is_dir():\n",
+        "    from google.colab import drive\n",
+        "    drive.mount('/content/drive')\n",
+        "else:\n",
+        "    print(\"Drive already mounted, continue.\");\n",
+        "\n",
+        "\n",
+        "def bar(prg):\n",
+        "    br=\"[1;33mUploading to HuggingFace : \" '[0m|'+'█' * prg + ' ' * (25-prg)+'| ' +str(prg*4)+ \"%\"\n",
+        "    return br\n",
+        "reload_image = \"\"\"\n",
+        "![Reload Setup 3/4 cell](https://raw.githubusercontent.com/steinhaug/stable-diffusion/main/assets/reload-cell-image-s.png)\n",
+        "\"\"\"\n",
+        "\n",
+        "from IPython.display import Markdown\n",
+        "def notify_reloader_cell():\n",
+        "    try:\n",
+        "        variable_value = YOUR_TOKEN\n",
+        "    except KeyError:\n",
+        "        display(Markdown(reload_image))\n",
+        "        raise SystemExit()\n",
+        "notify_reloader_cell()\n",
+        "\n",
+        "# - - - - - - -\n",
+        "\n",
+        "from slugify import slugify\n",
+        "from huggingface_hub import HfApi, HfFolder, CommitOperationAdd\n",
+        "from huggingface_hub import create_repo\n",
+        "from IPython.display import display_markdown\n",
+        "from IPython.display import clear_output\n",
+        "from IPython.utils import capture\n",
+        "from google.colab import files\n",
+        "import shutil\n",
+        "import time\n",
+        "import os\n",
+        "\n",
+        "!wget https://raw.githubusercontent.com/L0garithmic/fastcolabcopy/main/fastcopy.py\n",
+        "import os\n",
+        "def create_operations(directory, repodir='mydir'):\n",
+        "    operations = []\n",
+        "    dirpath = f\"'{directory}'\"\n",
+        "    for root, dirs, files in os.walk(directory):\n",
+        "        for file in files:\n",
+        "            relative_path = os.path.relpath(os.path.join(root, file), directory)\n",
+        "            operation = f\"CommitOperationAdd(path_in_repo='{repodir}/{relative_path}',path_or_fileobj={dirpath} + '/{relative_path}'),\"\n",
+        "            operations.append(operation)\n",
+        "    return operations\n",
+        "\n",
+        "hf_token_write = HUGGINGFACE_TOKEN\n",
+        "Name_of_your_concept = YOUR_TOKEN\n",
+        "Name_of_your_concept=Name_of_your_concept.replace(\" \",\"-\")\n",
+        "hf_token = hf_token_write\n",
+        "\n",
+        "api = HfApi()\n",
+        "your_username = api.whoami(token=hf_token)[\"name\"]\n",
+        "repo_id = f\"{your_username}/{slugify(Name_of_your_concept)}\"\n",
+        "print(f\"HF Repo: {repo_id}\")\n"
+      ],
+      "metadata": {
+        "cellView": "form",
+        "id": "CtsAYzVMIYGZ"
+      },
+      "execution_count": 3,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## --- Copy cells\n"
+      ],
+      "metadata": {
+        "id": "w9qTfCafvJb8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#@markdown $\\color{grey}{\\text{ --- Drive directory path to copy ---}}$\n",
+        "DIR_SOURCE = \"/content/drive/MyDrive/LLM\" #@param {type:\"string\"}\n",
+        "\n",
+        "#@markdown $\\color{grey}{\\text{ --- Local runtime directory path ---}}$\n",
+        "DIR_DESTIN = \"/content/LLM\" #@param {type:\"string\"}\n",
+        "\n",
+        "# define folder from drive into local\n",
+        "model_drive_path = f\"{DIR_SOURCE}\"\n",
+        "model_path = f\"{DIR_DESTIN}\""
+      ],
+      "metadata": {
+        "cellView": "form",
+        "id": "s7mvIQoqNaC4"
+      },
+      "execution_count": 85,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#@markdown Execute fastcopy daemons from DIR_SOURCE > DIR_DESTIN\n",
+        "if not os.path.isdir(model_path):\n",
+        "    os.makedirs(model_path)\n",
+        "\n",
+        "!python fastcopy.py \"$model_drive_path/\". \"$model_path\" --thread 20 --size-limit 400mb\n",
+        "!python fastcopy.py \"$model_drive_path/\". \"$model_path\" --thread 3 --size-limit 800mb\n",
+        "!python fastcopy.py \"$model_drive_path/\". \"$model_path\" --thread 3 --size-limit 3500mb\n",
+        "!rsync -r -v --size-only --progress $model_drive_path/. $model_path --delete"
+      ],
+      "metadata": {
+        "cellView": "form",
+        "id": "SuHeNB-OLTtc"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## ---- CLI file move / remove"
+      ],
+      "metadata": {
+        "id": "QL8bzBSvtLTA"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!rm -Rf /content/v1.1copy/*"
+      ],
+      "metadata": {
+        "id": "zPjnkNRORM6w"
+      },
+      "execution_count": 75,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!mv /content/v1.1b/cont* /content/v1.1copy"
+      ],
+      "metadata": {
+        "id": "r4iJpD5ORVgv"
+      },
+      "execution_count": 71,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## --- Upload to huggingface"
+      ],
+      "metadata": {
+        "id": "vp2wFeXJtSZp"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Alfa 1/2 : Create operations array, copy output into next cell for use\n",
+        "operations_list = create_operations('/content/LLM', 'LLM')\n",
+        "print('operations = [')\n",
+        "for operation in operations_list:\n",
+        "    print(operation)\n",
+        "print(']')"
+      ],
+      "metadata": {
+        "id": "5265Vm9HWgQH"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Alfa 2/2 : Manual commit, custom commit message\n",
+        "operations = [\n",
+        "CommitOperationAdd(path_in_repo='LLM/ggml-model-q4_1.bin',path_or_fileobj='/content/LLM' + '/ggml-model-q4_1.bin'),\n",
+        "]\n",
+        "api.create_commit(\n",
+        "    repo_id=repo_id,\n",
+        "    operations=operations,\n",
+        "    commit_message=f\"Adding ggml-model-q4_1.bin LLM model\",\n",
+        "    token=hf_token\n",
+        ")"
+      ],
+      "metadata": {
+        "id": "RpPnzpGSXC6G"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Bravo 1/1 : Upload a folder to the repo, default commit message\n",
+        "api.upload_folder(\n",
+        "    folder_path='/content/templates',\n",
+        "    path_in_repo=\"stable_diffusion/prompt-templates\",\n",
+        "    repo_id=repo_id, token=hf_token\n",
+        ")"
+      ],
+      "metadata": {
+        "collapsed": true,
+        "id": "ansMbSPYIfqO"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
