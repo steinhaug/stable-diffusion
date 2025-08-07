@@ -3,3 +3,4 @@ articles/**/*
 stable/prompts/**/*
 errors/**/*
 .colabs/**/*
+*.ipynb.bak
