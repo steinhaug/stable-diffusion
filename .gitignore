@@ -1,3 +1,5 @@
 BLIP-2/captioning/**/*
 articles/**/*
 stable/prompts/**/*
+errors/**/*
+.colabs/**/*
